@@ -11,4 +11,9 @@
     <string name="map_type_terrain">Terrain</string>
     <string name="map_type_satellite">Satellite</string>
     <string name="map_type_hybrid">Hybrid</string>
+
+    <string name="convener"><b>Convener</b></string>
+    <string name="spon"><b>Sponsorship Coordinators</b></string>
+    <string name="pub"><b>Publicity Coordinators</b></string>
+    <string name="media"><b>Media Coordinators</b></string>
 </resources>

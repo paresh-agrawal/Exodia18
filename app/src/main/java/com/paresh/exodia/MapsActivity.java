@@ -1,7 +1,12 @@
 package com.paresh.exodia;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -12,6 +17,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -61,74 +67,135 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         goToLocationZoom(31.773214, 76.984563, 16);
         Marker b1 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.772611, 76.984004))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin2))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
                 .title("B1")
                 .snippet("Boys Hostel"));
         Marker b3 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.772018, 76.983950))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin2))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
                 .title("B3")
                 .snippet("Girls Hostel"));
         Marker b4 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.772339, 76.984334))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin2))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
                 .title("B4")
                 .snippet("Girls Hostel"));
         Marker b2 = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(31.772267, 76.983918))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin2))
+                .position(new LatLng(31.772383, 76.984029))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
                 .title("B2")
                 .snippet("Boys Hostel"));
         Marker b5 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.771562, 76.983500))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin2))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
                 .title("B5")
                 .snippet("Boys Hostel"));
         Marker b6 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.771811, 76.983173))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin2))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
                 .title("B6")
                 .snippet("Boys Hostel"));
         Marker b7 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.771177, 76.982883))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin2))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
                 .title("B7")
                 .snippet("Boys Hostel"));
         Marker g3 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.771815, 76.983723))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin2))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
                 .title("G3")
                 .snippet("Boys Hostel"));
         Marker g4 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.771043, 76.983174))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin2))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
                 .title("G4")
                 .snippet("Boys Hostel"));
         Marker a1 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.775356, 76.985414))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin4))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_red))
                 .title("A1")
                 .snippet("Academic Building"));
         Marker grnd = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.773698, 76.984170))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin3))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
                 .title("Football")
                 .snippet("Ground"));
         Marker baddy = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.770549, 76.982936))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin3))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
                 .title("Badminton")
                 .snippet("court"));
         Marker tt = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.770628, 76.982970))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin3))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
                 .title("TT")
                 .snippet("court"));
         Marker gym = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.770622, 76.982891))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.droppin3))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
                 .title("Gym"));
+        Marker a9 = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(31.774853, 76.983934))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_red))
+                .title("A9")
+                .snippet("Building"));
+        Marker a5 = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(31.774238, 76.985955))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_red))
+                .title("A5")
+                .snippet("Building"));
+        Marker g2 = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(31.773593, 76.985415))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
+                .title("G2")
+                .snippet("Boys Hostel"));
+        Marker mg = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(31.774227, 76.984969))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .title("Cricket")
+                .snippet("Ground"));
+        Marker bc = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(31.773185, 76.984682))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .title("Basketball")
+                .snippet("court"));
+        Marker lt = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(31.773114, 76.984481))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .title("Lawn Tennis")
+                .snippet("court"));
+        Marker d1 = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(31.773321, 76.984957))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_green))
+                .title("D1")
+                .snippet("mess"));
+        Marker d2 = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(31.772115, 76.983557))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_green))
+                .title("D2")
+                .snippet("mess"));
+        Marker oat = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(31.770382, 76.983339))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .title("OAT")
+                .snippet("Open Air Theatre"));
+        Marker afc = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(31.772771, 76.984318))
+                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_green))
+                .title("AFC")
+                .snippet("Canteen"));
+
     }
+
+    private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId) {
+        Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
+        vectorDrawable.setBounds(0, 0, vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight());
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

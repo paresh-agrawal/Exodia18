@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -27,7 +28,9 @@ public class MainActivity extends AppCompatActivity
     Timer timer,colorTimer;
     int page = 0;
     CustomPagerAdapter mCustomPagerAdapter;
+    private boolean viewIsAtHome;
     ViewPager mViewPager;
+    LinearLayout ll_home_events,ll_home_schedule,ll_home_directions,ll_home_contact_us,ll_home_sponsors,ll_home_app_credits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,13 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ll_home_events = (LinearLayout)findViewById(R.id.ll_home_events);
+        ll_home_schedule = (LinearLayout)findViewById(R.id.ll_home_schedule);
+        ll_home_app_credits = (LinearLayout)findViewById(R.id.ll_home_app_credits);
+        ll_home_directions = (LinearLayout)findViewById(R.id.ll_home_directions);
+        ll_home_sponsors = (LinearLayout)findViewById(R.id.ll_home_sponsors);
+        ll_home_contact_us = (LinearLayout)findViewById(R.id.ll_home_contact_us);
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -55,12 +65,29 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         mCustomPagerAdapter = new CustomPagerAdapter(this);
-
         mViewPager = (ViewPager) findViewById(R.id.pager);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
         tabLayout.setupWithViewPager(mViewPager, true);
         mViewPager.setAdapter(mCustomPagerAdapter);
+
         pageSwitcher();
+        onClickMethods();
+    }
+
+    private void onClickMethods() {
+        ll_home_contact_us.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayView(R.id.nav_contact_us);
+            }
+        });
+
+        ll_home_directions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,MapsActivity.class));
+            }
+        });
     }
 
     @Override
@@ -103,13 +130,15 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_directions) {
             startActivity(new Intent(MainActivity.this,MapsActivity.class));
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
             return true;
         } else if (id == R.id.nav_home) {
-
+            displayView(R.id.nav_home);
         } else if (id == R.id.nav_sponsors) {
 
         } else if (id == R.id.nav_contact_us) {
-
+            displayView(R.id.nav_contact_us);
         } else if (id == R.id.nav_app_credits) {
 
         } else if (id == R.id.nav_events) {
@@ -151,6 +180,46 @@ public class MainActivity extends AppCompatActivity
             });
 
         }
+    }
+
+    public void displayView(int viewId) {
+
+        Fragment fragment = null;
+        String title = getString(R.string.app_name);
+
+        switch (viewId) {
+
+            case R.id.nav_contact_us:
+                fragment = new ContactUs();
+                viewIsAtHome = true;
+                title  = "Our Team";
+                break;
+            case R.id.nav_home:
+                fragment = new Home();
+                viewIsAtHome= true;
+                title = "Exodia";
+                break;
+
+        }
+
+        if (fragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, fragment);
+            ft.commit();
+        }
+
+        // set the toolbar title
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(title);
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+
+    }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
     }
 
 }
