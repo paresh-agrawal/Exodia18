@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity
     CustomPagerAdapter mCustomPagerAdapter;
     private boolean viewIsAtHome;
     ViewPager mViewPager;
-    LinearLayout ll_home_events,ll_home_schedule,ll_home_directions,ll_home_contact_us,ll_home_sponsors,ll_home_app_credits;
+    LinearLayout ll_home_events,ll_home_schedule,ll_home_directions,ll_home_contact_us,
+            ll_home_sponsors,ll_home_app_credits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,6 @@ public class MainActivity extends AppCompatActivity
                 displayView(R.id.nav_contact_us);
             }
         });
-
         ll_home_directions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,6 +92,12 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 displayView(R.id.nav_schedule);
+            }
+        });
+        ll_home_app_credits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayView(R.id.nav_app_credits);
             }
         });
     }
@@ -146,7 +152,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_contact_us) {
             displayView(R.id.nav_contact_us);
         } else if (id == R.id.nav_app_credits) {
-
+            displayView(R.id.nav_app_credits);
         } else if (id == R.id.nav_events) {
 
         } else if (id == R.id.nav_schedule) {
@@ -209,6 +215,11 @@ public class MainActivity extends AppCompatActivity
                 fragment = new Schedule();
                 viewIsAtHome = true;
                 title  = "Schedule";
+                break;
+            case R.id.nav_app_credits:
+                fragment = new AppCredits();
+                viewIsAtHome = true;
+                title  = "App Credits";
                 break;
 
         }

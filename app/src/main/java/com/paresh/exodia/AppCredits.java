@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
 /**
@@ -44,6 +46,42 @@ public class AppCredits extends Fragment {
         View app_credits = inflater.inflate(R.layout.fragment_app_credits, container, false);
         ((MainActivity) getActivity())
                 .setActionBarTitle("App Credits");
+
+        RelativeLayout rl_app_credits = (RelativeLayout)app_credits.findViewById(R.id.rl_app_credits);
+        ImageView iv_fb = (ImageView)app_credits.findViewById(R.id.iv_fb);
+        ImageView iv_github = (ImageView)app_credits.findViewById(R.id.iv_github);
+        TextView tv_github_username = (TextView)app_credits.findViewById(R.id.tv_githun_username);
+
+        rl_app_credits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                return;
+            }
+        });
+        iv_fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://www.facebook.com/paresh.k.agrawal");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        iv_github.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://github.com/paresh-agrawal");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        tv_github_username.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://github.com/paresh-agrawal");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
 
         return app_credits;
     }

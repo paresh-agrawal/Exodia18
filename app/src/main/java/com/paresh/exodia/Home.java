@@ -35,7 +35,8 @@ public class Home extends Fragment {
     CustomPagerAdapter mCustomPagerAdapter;
     private boolean viewIsAtHome;
     ViewPager mViewPager;
-    LinearLayout ll_home_events,ll_home_schedule,ll_home_directions,ll_home_contact_us,ll_home_sponsors,ll_home_app_credits;
+    LinearLayout ll_home_events,ll_home_schedule,ll_home_directions,ll_home_contact_us,
+            ll_home_sponsors,ll_home_app_credits;
 
     public Home() {
         // Required empty public constructor
@@ -75,6 +76,8 @@ public class Home extends Fragment {
         mViewPager.setAdapter(mCustomPagerAdapter);
 
         pageSwitcher();
+        onClickMethods();
+
         return home;
     }
 
@@ -85,7 +88,6 @@ public class Home extends Fragment {
                 displayView(R.id.nav_contact_us);
             }
         });
-
         ll_home_directions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,6 +98,12 @@ public class Home extends Fragment {
             @Override
             public void onClick(View view) {
                 displayView(R.id.nav_schedule);
+            }
+        });
+        ll_home_app_credits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayView(R.id.nav_app_credits);
             }
         });
     }
@@ -151,6 +159,11 @@ public class Home extends Fragment {
                 fragment = new Schedule();
                 viewIsAtHome = true;
                 title  = "Schedule";
+                break;
+            case R.id.nav_app_credits:
+                fragment = new AppCredits();
+                viewIsAtHome = true;
+                title  = "App Credits";
                 break;
 
         }
