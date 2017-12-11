@@ -88,6 +88,12 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(MainActivity.this,MapsActivity.class));
             }
         });
+        ll_home_schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayView(R.id.nav_schedule);
+            }
+        });
     }
 
     @Override
@@ -144,7 +150,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_events) {
 
         } else if (id == R.id.nav_schedule) {
-
+            displayView(R.id.nav_schedule);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -198,6 +204,11 @@ public class MainActivity extends AppCompatActivity
                 fragment = new Home();
                 viewIsAtHome= true;
                 title = "Exodia";
+                break;
+            case R.id.nav_schedule:
+                fragment = new Schedule();
+                viewIsAtHome = true;
+                title  = "Schedule";
                 break;
 
         }

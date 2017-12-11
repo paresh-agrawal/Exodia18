@@ -16,4 +16,8 @@
     <string name="spon"><b>Sponsorship Coordinators</b></string>
     <string name="pub"><b>Publicity Coordinators</b></string>
     <string name="media"><b>Media Coordinators</b></string>
+    <string name="title_activity_tabbed">Tabbed</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

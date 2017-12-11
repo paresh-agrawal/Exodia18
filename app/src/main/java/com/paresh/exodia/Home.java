@@ -92,6 +92,12 @@ public class Home extends Fragment {
                 startActivity(new Intent(getActivity(),MapsActivity.class));
             }
         });
+        ll_home_schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                displayView(R.id.nav_schedule);
+            }
+        });
     }
 
     public void pageSwitcher() {
@@ -140,6 +146,11 @@ public class Home extends Fragment {
                 fragment = new Home();
                 viewIsAtHome= true;
                 title = "Exodia";
+                break;
+            case R.id.nav_schedule:
+                fragment = new Schedule();
+                viewIsAtHome = true;
+                title  = "Schedule";
                 break;
 
         }
