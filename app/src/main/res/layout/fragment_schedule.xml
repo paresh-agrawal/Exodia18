@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.paresh.exodia.ContactUs"
+    android:background="@color/background">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.paresh.exodia.Schedule">
+
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="visible"
+            android:id="@+id/progressBar"
+            android:layout_centerInParent="true"/>
+
+        //Day1
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/sv_day1"
+            android:visibility="visible"
+            android:layout_above="@id/navigation">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_above="@+id/navigation"
+                android:id="@+id/rl_day1"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_schedule_day1"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </ScrollView>
+
+        //Day2
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/sv_day2"
+            android:visibility="invisible"
+            android:layout_above="@id/navigation">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_above="@+id/navigation"
+                android:id="@+id/rl_day2"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_schedule_day2"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </ScrollView>
+
+        //Day3
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/sv_day3"
+            android:visibility="invisible"
+            android:layout_above="@id/navigation">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_above="@+id/navigation"
+                android:id="@+id/rl_day3"
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_schedule_day3"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </ScrollView>
+
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/navigation" />
+
+    </RelativeLayout>
+
+</FrameLayout>

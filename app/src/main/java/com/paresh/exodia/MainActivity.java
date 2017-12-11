@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
         }
 
-        // set the toolbar title
+        // set the toolbar event_name
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(title);
         }
