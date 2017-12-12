@@ -38,7 +38,7 @@ public class LoadScreen extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        }, 1500);
+        }, 3100);
     }
 
 
