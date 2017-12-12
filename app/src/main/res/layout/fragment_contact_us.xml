@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,53 +13,51 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:orientation="vertical">
-
-
 
             //convener
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/convener"
-                android:textColor="#fff"
+                android:textColor="#95ffffff"
                 android:textAllCaps="true"
                 android:textSize="17dp"
                 android:gravity="center"
                 android:layout_marginTop="10dp"/>
-
-            //kislaya
+            //Param
             <RelativeLayout
-                android:id="@+id/item_linear_layout"
                 android:layout_width="match_parent"
+                android:id="@+id/iv_call_image_param"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/contact_background">
 
                 <ImageView
-                    android:id="@+id/ivTeamMemberPic_kislaya"
+                    android:id="@+id/ivTeamMemberPic_param"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_person" />
+                    app:srcCompat="@drawable/ic_person" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/ivTeamMemberPic_kislaya"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_param"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tvTeamMemberName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_kislaya"
-                        android:text="Kislaya Mishra"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Param Kashyap"
                         android:textColor="#07040c"
                         android:textStyle="bold" />
 
@@ -67,13 +66,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/tvTeamMemberName"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_kislaya"
-                        android:text="kislaya_mishra@students.iitmandi.ac.in"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="b16098@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
                         android:textSize="12dp"/>
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/iv_call_image_kislaya"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -81,70 +80,121 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="18dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/ic_call_black" />
+                    app:srcCompat="@drawable/ic_call_black" />
+
+            </RelativeLayout>
+            //Purvesh
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/iv_call_image_purvesh"
+                android:layout_height="55dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:background="@drawable/contact_background">
+
+                <ImageView
+                    android:id="@+id/ivTeamMemberPic_purvesh"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Purvesh Chhajed"
+                        android:textColor="#07040c"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16070@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="18dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_call_black" />
 
             </RelativeLayout>
 
-            //spon
+            //Hospitality
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/spon"
-                android:textColor="#fff"
+                android:text="hospitality coordinators"
+                android:textColor="#95ffffff"
                 android:textAllCaps="true"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center" />
-
-            //Aditya Sharma
+            //Shubham
             <RelativeLayout
-                android:id="@+id/item_linear_layout1"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_marginLeft="5dp"
+                android:id="@+id/iv_call_image_shubham"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/contact_background">
 
                 <ImageView
-                    android:id="@+id/ivTeamMemberPic_aditya"
+                    android:id="@+id/ivTeamMemberPic_shubham"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_person" />
+                    app:srcCompat="@drawable/ic_person" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/ivTeamMemberPic_aditya"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_shubham"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvTeamMemberName1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_aditya"
-                        android:text="Aditya Sharma"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Shubham Tiwary"
                         android:textColor="#07040c"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvTeamMemberEmail1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvTeamMemberName1"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_aditya"
-                        android:text="sharma.aditya1011@gmail.com"
-                        android:textSize="12dp" />
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16146@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/iv_call_image_aditya"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -152,57 +202,55 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="18dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/ic_call_black" />
+                    app:srcCompat="@drawable/ic_call_black" />
 
             </RelativeLayout>
-
-            //Abhishek Tiwari
+            //Ashutosh
             <RelativeLayout
-                android:id="@+id/item_linear_layout2"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
+                android:id="@+id/iv_call_image_ashutosh"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/contact_background">
 
                 <ImageView
-                    android:id="@+id/ivTeamMemberPic_abhishek"
+                    android:id="@+id/ivTeamMemberPic_ashutosh"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_person" />
+                    app:srcCompat="@drawable/ic_person" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/ivTeamMemberPic_abhishek"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_ashutosh"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvTeamMemberName2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_aditya"
-                        android:text="Abhishek Tiwari"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Ashutosh Jamadari"
                         android:textColor="#07040c"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvTeamMemberEmail2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvTeamMemberName2"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_abhishek"
-                        android:text="abhishek_tiwari@students.iitmandi.ac.in"
-                        android:textSize="12dp" />
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16014@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/iv_call_image_abhishek"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -210,68 +258,65 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="18dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/ic_call_black" />
+                    app:srcCompat="@drawable/ic_call_black" />
 
             </RelativeLayout>
 
-            //publicity
+            //planning and management
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/pub"
-                android:textColor="#fff"
+                android:text="planning and management"
+                android:textColor="#95ffffff"
                 android:textAllCaps="true"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center" />
-
-            //Atul
+            //Hardeep
             <RelativeLayout
-                android:id="@+id/item_linear_layout3"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
+                android:id="@+id/iv_call_image_hardeep"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal"
                 android:background="@drawable/contact_background">
 
                 <ImageView
-                    android:id="@+id/ivTeamMemberPic_atul"
+                    android:id="@+id/ivTeamMemberPic_hardeep"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_person" />
+                    app:srcCompat="@drawable/ic_person" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/ivTeamMemberPic_atul"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_hardeep"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvTeamMemberName3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_atul"
-                        android:text="Atul Yadav"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Hardeep Malik"
                         android:textColor="#07040c"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvTeamMemberEmail3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvTeamMemberName3"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_atul"
-                        android:text="atul_yadav@students.iitmandi.ac.in"
-                        android:textSize="12dp" />
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16131@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/iv_call_image_atul"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -279,57 +324,54 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="18dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/ic_call_black" />
+                    app:srcCompat="@drawable/ic_call_black" />
 
             </RelativeLayout>
-
-            //mukesh
+            //Rohit
             <RelativeLayout
-                android:id="@+id/item_linear_layout4"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
+                android:id="@+id/iv_call_image_rohit"
+                android:layout_marginTop="2dp"
                 android:orientation="horizontal"
                 android:background="@drawable/contact_background">
 
                 <ImageView
-                    android:id="@+id/ivTeamMemberPic_mukesh"
+                    android:id="@+id/ivTeamMemberPic_rohit"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_person" />
+                    app:srcCompat="@drawable/ic_person" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/ivTeamMemberPic_mukesh"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_rohit"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvTeamMemberName4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_mukesh"
-                        android:text="Mukesh Kumawat"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Rohit Kaushal"
                         android:textColor="#07040c"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvTeamMemberEmail4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvTeamMemberName3"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_mukesh"
-                        android:text="Mukesh_kumawat@students.iitmandi.ac.in"
-                        android:textSize="12dp" />
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16028@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/iv_call_image_mukesh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -337,57 +379,55 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="18dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/ic_call_black" />
+                    app:srcCompat="@drawable/ic_call_black" />
 
             </RelativeLayout>
-
-            //anuksha
+            //parimal
             <RelativeLayout
-                android:id="@+id/item_linear_layout5"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
+                android:id="@+id/iv_call_image_parimal"
                 android:background="@drawable/contact_background">
 
                 <ImageView
-                    android:id="@+id/ivTeamMemberPic_anuksha"
+                    android:id="@+id/ivTeamMemberPic_parimal"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_person" />
+                    app:srcCompat="@drawable/ic_person" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/ivTeamMemberPic_anuksha"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_parimal"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvTeamMemberName5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_anuksha"
-                        android:text="Anuksha Jain"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Parimal Kumar"
                         android:textColor="#07040c"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvTeamMemberEmail5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvTeamMemberName3"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_anuksha"
-                        android:text="anuksha_jain@students.iitmandi.ac.in"
-                        android:textSize="12dp" />
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16137@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/iv_call_image_anuksha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -395,68 +435,65 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="18dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/ic_call_black" />
+                    app:srcCompat="@drawable/ic_call_black" />
 
             </RelativeLayout>
 
-            //media
+            //publicity cordi
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/media"
-                android:textColor="#fff"
+                android:text="Publicity Coordinator"
+                android:textColor="#95ffffff"
                 android:textAllCaps="true"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center" />
-
-            //Rahul
+            //Shivam
             <RelativeLayout
-                android:id="@+id/item_linear_layout6"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/iv_call_image_shivam"
                 android:orientation="horizontal"
                 android:background="@drawable/contact_background">
 
                 <ImageView
-                    android:id="@+id/ivTeamMemberPic_rahul"
+                    android:id="@+id/ivTeamMemberPic_shivam"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_person" />
+                    app:srcCompat="@drawable/ic_person" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/ivTeamMemberPic_rahul"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_shivam"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvTeamMemberName6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_rahul"
-                        android:text="Rahul Jain"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Shivam Choudhary"
                         android:textColor="#07040c"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvTeamMemberEmail6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvTeamMemberName3"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_rahul"
-                        android:text="rahul_jain@students.iitmandi.ac.in"
-                        android:textSize="12dp" />
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16115@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/iv_call_image_rahul"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -464,57 +501,55 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="18dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/ic_call_black" />
+                    app:srcCompat="@drawable/ic_call_black" />
 
             </RelativeLayout>
-
-            //pulkit
+            //palak
             <RelativeLayout
-                android:id="@+id/item_linear_layout7"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_margin="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
+                android:id="@+id/iv_call_image_palak"
                 android:background="@drawable/contact_background">
 
                 <ImageView
-                    android:id="@+id/ivTeamMemberPic_pulkit"
+                    android:id="@+id/ivTeamMemberPic_palak"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_margin="5dp"
                     android:paddingBottom="5dp"
                     android:paddingTop="5dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_person" />
+                    app:srcCompat="@drawable/ic_person" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/ivTeamMemberPic_pulkit"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_palak"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvTeamMemberName7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_rahul"
-                        android:text="Pulkit Sharma"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Palak Gupta"
                         android:textColor="#07040c"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvTeamMemberEmail7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvTeamMemberName3"
-                        android:layout_toRightOf="@id/ivTeamMemberPic_pulkit"
-                        android:text="pulkit_kumar_sharma@students.iitmandi.ac.in"
-                        android:textSize="12dp" />
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16067@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/iv_call_image_pulkit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -522,10 +557,564 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="18dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/ic_call_black" />
+                    app:srcCompat="@drawable/ic_call_black" />
 
             </RelativeLayout>
 
+            //security
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Security Coordinator"
+                android:textColor="#95ffffff"
+                android:textAllCaps="true"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center" />
+            //gaurav
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/iv_call_image_gaurav"
+                android:orientation="horizontal"
+                android:background="@drawable/contact_background">
+
+                <ImageView
+                    android:id="@+id/ivTeamMemberPic_gaurav"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_gaurav"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Gaurav Kumar"
+                        android:textColor="#07040c"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16057@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="18dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_call_black" />
+
+            </RelativeLayout>
+            //rocky
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/iv_call_image_rocky"
+                android:orientation="horizontal"
+                android:background="@drawable/contact_background">
+
+                <ImageView
+                    android:id="@+id/ivTeamMemberPic_rocky"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_rocky"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Rocky Verma"
+                        android:textColor="#07040c"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16141@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="18dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_call_black" />
+
+            </RelativeLayout>
+
+            //design and creativity
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Design and Creativity"
+                android:textColor="#95ffffff"
+                android:textAllCaps="true"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center" />
+            //vishnu
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:id="@+id/iv_call_image_vishnu"
+                android:background="@drawable/contact_background">
+
+                <ImageView
+                    android:id="@+id/ivTeamMemberPic_vishnu"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_vishnu"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Vishnu Priya Jindal"
+                        android:textColor="#07040c"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16041@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="18dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_call_black" />
+
+            </RelativeLayout>
+            //shishir
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:id="@+id/iv_call_image_shishir"
+                android:background="@drawable/contact_background">
+
+                <ImageView
+                    android:id="@+id/ivTeamMemberPic_shishir"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_shishir"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Shishir Asthana"
+                        android:textColor="#07040c"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16144@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="18dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_call_black" />
+
+            </RelativeLayout>
+
+            //finance coordi
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Finance Coordinator"
+                android:textColor="#95ffffff"
+                android:textAllCaps="true"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center" />
+            //prateek
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/iv_call_image_prateek"
+                android:orientation="horizontal"
+                android:background="@drawable/contact_background">
+
+                <ImageView
+                    android:id="@+id/ivTeamMemberPic_prateek"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_prateek"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Prateek Kumar Sonker"
+                        android:textColor="#07040c"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="t16046@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="18dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_call_black" />
+
+            </RelativeLayout>
+
+            //sponsorship
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sponsorship Coordinator"
+                android:textColor="#95ffffff"
+                android:textAllCaps="true"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center" />
+            //anant
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:id="@+id/iv_call_image_anant"
+                android:background="@drawable/contact_background">
+
+                <ImageView
+                    android:id="@+id/ivTeamMemberPic_anant"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_anant"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Anant Mishra"
+                        android:textColor="#07040c"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16011@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="18dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_call_black" />
+
+            </RelativeLayout>
+            //navneet
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:id="@+id/iv_call_image_navneet"
+                android:background="@drawable/contact_background">
+
+                <ImageView
+                    android:id="@+id/ivTeamMemberPic_navneet"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_navneet"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Navneet Sharma"
+                        android:textColor="#07040c"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16065@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="18dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_call_black" />
+
+            </RelativeLayout>
+
+            //web cordi
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Web Development Coordinator"
+                android:textColor="#95ffffff"
+                android:textAllCaps="true"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center" />
+            //gagan
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:id="@+id/iv_call_image_gagan"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:background="@drawable/contact_background">
+
+                <ImageView
+                    android:id="@+id/ivTeamMemberPic_gagan"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_gagan"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Gagan Deep Tomar"
+                        android:textColor="#07040c"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16056@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="18dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_call_black" />
+
+            </RelativeLayout>
+            //hritik
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:id="@+id/iv_call_image_hritik"
+                android:background="@drawable/contact_background">
+
+                <ImageView
+                    android:id="@+id/ivTeamMemberPic_hritik"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/ivTeamMemberPic_hritik"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_param"
+                        android:text="Hritik Gupta"
+                        android:textColor="#07040c"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvTeamMemberName"
+                        android:layout_toRightOf="@id/ivTeamMemberPic_purvesh"
+                        android:text="b16097@students.iitmandi.ac.in"
+                        android:textColor="#9507040c"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="18dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_call_black" />
+
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>

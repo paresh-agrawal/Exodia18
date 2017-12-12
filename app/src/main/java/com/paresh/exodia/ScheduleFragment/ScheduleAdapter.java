@@ -1,4 +1,4 @@
-package com.paresh.exodia;
+package com.paresh.exodia.ScheduleFragment;
 
 /**
  * Created by paresh on 11/12/17.
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.paresh.exodia.R;
 
 import java.util.List;
 

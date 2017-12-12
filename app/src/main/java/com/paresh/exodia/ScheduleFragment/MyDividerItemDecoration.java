@@ -1,4 +1,4 @@
-package com.paresh.exodia;
+package com.paresh.exodia.ScheduleFragment;
 
 /**
  * Created by paresh on 11/12/17.

@@ -8,16 +8,13 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
+
+import com.paresh.exodia.ScheduleFragment.Schedule;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -106,6 +103,12 @@ public class Home extends Fragment {
                 displayView(R.id.nav_app_credits);
             }
         });
+        ll_home_events.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayView(R.id.nav_events);
+            }
+        });
     }
 
     public void pageSwitcher() {
@@ -162,6 +165,11 @@ public class Home extends Fragment {
                 break;
             case R.id.nav_app_credits:
                 fragment = new AppCredits();
+                viewIsAtHome = true;
+                title  = "App Credits";
+                break;
+            case R.id.nav_events:
+                fragment = new EventFragment();
                 viewIsAtHome = true;
                 title  = "App Credits";
                 break;

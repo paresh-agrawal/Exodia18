@@ -12,7 +12,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 
 /**
@@ -44,62 +44,134 @@ public class ContactUs extends Fragment {
         View contact_us = inflater.inflate(R.layout.fragment_contact_us, container, false);
         ((MainActivity) getActivity())
                 .setActionBarTitle("Our Team");
-        ImageView ivcall = (ImageView)contact_us.findViewById(R.id.iv_call_image_kislaya);
+        RelativeLayout ivcall = (RelativeLayout) contact_us.findViewById(R.id.iv_call_image_param);
+        RelativeLayout ivcall1 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_purvesh);
+        RelativeLayout ivcall2 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_prateek);
+        RelativeLayout ivcall3 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_navneet);
+        RelativeLayout ivcall4 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_anant);
+        RelativeLayout ivcall5 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_shivam);
+        RelativeLayout ivcall6 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_palak);
+        RelativeLayout ivcall7 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_parimal);
+        RelativeLayout ivcall8 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_hardeep);
+        RelativeLayout ivcall9 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_rohit);
+        RelativeLayout ivcall10 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_vishnu);
+        RelativeLayout ivcall11 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_shishir);
+        RelativeLayout ivcall12 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_rocky);
+        RelativeLayout ivcall13 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_gaurav);
+        RelativeLayout ivcall14 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_gagan);
+        RelativeLayout ivcall15 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_hritik);
+        RelativeLayout ivcall16 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_ashutosh);
+        RelativeLayout ivcall17 = (RelativeLayout)contact_us.findViewById(R.id.iv_call_image_shubham);
+
         ivcall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015413")));
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919619071362")));
             }
         });
-        ImageView call1 = (ImageView)contact_us.findViewById(R.id.iv_call_image_aditya);
-        call1.setOnClickListener(new View.OnClickListener() {
+        ivcall1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015395")));
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918989773933")));
             }
         });
-        ImageView call2 = (ImageView)contact_us.findViewById(R.id.iv_call_image_abhishek);
-        call2.setOnClickListener(new View.OnClickListener() {
+        ivcall2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015394")));
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918894924593")));
             }
         });
-        ImageView call3 = (ImageView)contact_us.findViewById(R.id.iv_call_image_atul);
-        call3.setOnClickListener(new View.OnClickListener() {
+        ivcall3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015414")));
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919464895402")));
             }
         });
-        ImageView call4 = (ImageView)contact_us.findViewById(R.id.iv_call_image_mukesh);
-        call4.setOnClickListener(new View.OnClickListener() {
+        ivcall4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918350939554")));
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919456456296")));
             }
         });
-        ImageView call5 = (ImageView)contact_us.findViewById(R.id.iv_call_image_anuksha);
-        call5.setOnClickListener(new View.OnClickListener() {
+        ivcall5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918629015407")));
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+917807112988")));
             }
         });
-        ImageView call6 = (ImageView)contact_us.findViewById(R.id.iv_call_image_rahul);
-        call6.setOnClickListener(new View.OnClickListener() {
+        ivcall6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918989587883")));
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+917508002001")));
             }
         });
-        ImageView call7 = (ImageView)contact_us.findViewById(R.id.iv_call_image_pulkit);
-        call7.setOnClickListener(new View.OnClickListener() {
+        ivcall7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919882650863")));
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918504977737")));
             }
         });
+        ivcall8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919999559836")));
+            }
+        });
+        ivcall9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919454537830")));
+            }
+        });
+        ivcall10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+917018590593")));
+            }
+        });
+        ivcall11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919810580980")));
+            }
+        });
+        ivcall12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+919816729336")));
+            }
+        });
+        ivcall13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918619343008")));
+            }
+        });
+        ivcall14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+917018343879")));
+            }
+        });
+        ivcall15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918178412942")));
+            }
+        });
+        ivcall16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+917807104705")));
+            }
+        });
+        ivcall17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+918700817547")));
+            }
+        });
+
         return contact_us;
     }
     @Override
