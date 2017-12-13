@@ -30,7 +30,7 @@ public class LoadScreen extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
 // finally change the color
-        window.setStatusBarColor(ContextCompat.getColor(this,R.color.background));
+        window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

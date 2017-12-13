@@ -21,30 +21,26 @@
             android:icon="@drawable/ic_menu_directions"
             android:title="Campus Map"/>
         <item
-            android:id="@+id/nav_app_credits"
-            android:icon="@drawable/ic_menu_app_credits"
-            android:title="App Credits"/>
-        <item
             android:id="@+id/nav_contact_us"
             android:icon="@drawable/ic_menu_contact_us"
             android:title="Contact Us"/>
         <item
+            android:id="@+id/nav_app_credits"
+            android:icon="@drawable/ic_menu_app_credits"
+            android:title="App Credits"/>
+        <item
             android:id="@+id/nav_sponsors"
             android:icon="@drawable/ic_menu_sponsors"
             android:title="Sponsors"/>
-    </group>
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="About"/>
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Share" />
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+    </group>
 
 </menu>

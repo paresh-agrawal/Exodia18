@@ -1,7 +1,8 @@
 package com.paresh.exodia;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity
     ViewPager mViewPager;
     LinearLayout ll_home_events,ll_home_schedule,ll_home_directions,ll_home_contact_us,
             ll_home_sponsors,ll_home_app_credits;
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity
         ll_home_directions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,MapsActivity.class));
+                displayView(R.id.nav_directions);
             }
         });
         ll_home_schedule.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +116,24 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+
+            this.doubleBackToExitPressedOnce = true;
+            Snackbar snackbar = Snackbar
+                    .make( this.findViewById(android.R.id.content).getRootView(),
+                            "Press BACK again to exit", Snackbar.LENGTH_SHORT);
+            snackbar.show();
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce=false;
+                }
+            }, 2000);
         }
     }
 
@@ -133,7 +152,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_exit) {
+            finish();
             return true;
         }
 
@@ -147,10 +167,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_directions) {
-            startActivity(new Intent(MainActivity.this,MapsActivity.class));
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
-            return true;
+//            startActivity(new Intent(MainActivity.this,MapsActivity.class));
+//            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//            drawer.closeDrawer(GravityCompat.START);
+//            return true;
+            displayView(R.id.nav_directions);
         } else if (id == R.id.nav_home) {
             displayView(R.id.nav_home);
         } else if (id == R.id.nav_sponsors) {
@@ -163,6 +184,8 @@ public class MainActivity extends AppCompatActivity
             displayView(R.id.nav_events);
         } else if (id == R.id.nav_schedule) {
             displayView(R.id.nav_schedule);
+        } else if (id == R.id.nav_about) {
+            displayView(R.id.nav_about);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -231,6 +254,16 @@ public class MainActivity extends AppCompatActivity
                 fragment = new EventFragment();
                 viewIsAtHome = true;
                 title  = "Events";
+                break;
+            case R.id.nav_about:
+                fragment = new AboutExodia();
+                viewIsAtHome = true;
+                title  = "About Exodia";
+                break;
+            case R.id.nav_directions:
+                fragment = new MapsFragment();
+                viewIsAtHome = true;
+                title  = "About Exodia";
                 break;
 
         }

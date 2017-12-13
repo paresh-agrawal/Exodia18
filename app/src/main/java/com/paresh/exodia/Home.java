@@ -88,7 +88,7 @@ public class Home extends Fragment {
         ll_home_directions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(),MapsActivity.class));
+                displayView(R.id.nav_directions);
             }
         });
         ll_home_schedule.setOnClickListener(new View.OnClickListener() {
@@ -173,6 +173,12 @@ public class Home extends Fragment {
                 viewIsAtHome = true;
                 title  = "App Credits";
                 break;
+            case R.id.nav_directions:
+                fragment = new MapsFragment();
+                viewIsAtHome = true;
+                title  = "App Credits";
+                break;
+
 
         }
 

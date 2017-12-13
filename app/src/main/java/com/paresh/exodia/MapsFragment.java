@@ -1,15 +1,23 @@
 package com.paresh.exodia;
 
+
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -22,34 +30,100 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_map);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+    public MapsFragment() {
+        // Required empty public constructor
     }
 
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View maps_fragment = inflater.inflate(R.layout.fragment_map, container, false);
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Campus Map");
+
+        if (mMap == null) {
+            SupportMapFragment mapFrag = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+            mapFrag.getMapAsync(this);
+        }
+
+        RelativeLayout rl_map_type = (RelativeLayout)maps_fragment.findViewById(R.id.rl_map_type);
+        ImageView iv_map_type = (ImageView)maps_fragment.findViewById(R.id.iv_map_type);
+        TextView tv_map_type = (TextView)maps_fragment.findViewById(R.id.tv_map_type);
+
+
+        rl_map_type.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(tv_map_type.getText().toString().equals("NORMAL")){
+                    mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                    iv_map_type.setBackground(getResources().getDrawable(R.drawable.ic_satellite));
+                    tv_map_type.setText("SATELLITE");
+                }else {
+                    mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                    iv_map_type.setBackground(getResources().getDrawable(R.drawable.ic_map));
+                    tv_map_type.setText("NORMAL");
+                }
+
+            }
+        });
+
+        return maps_fragment;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if(getView() == null){
+            return;
+        }
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                    Fragment fragment = new Home();
+                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.content_frame,fragment);
+                    ft.commit();
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
 
     private void goToLocationZoom(double lat, double lng, float zoom) {
         LatLng ll = new LatLng(lat, lng);
@@ -66,121 +140,121 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         goToLocationZoom(31.773214, 76.984563, 16);
         Marker b1 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.772611, 76.984004))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_blue))
                 .title("B1")
                 .snippet("Boys Hostel"));
         Marker b3 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.772018, 76.983950))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_blue))
                 .title("B3")
                 .snippet("Girls Hostel"));
         Marker b4 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.772339, 76.984334))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_blue))
                 .title("B4")
                 .snippet("Girls Hostel"));
         Marker b2 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.772383, 76.984029))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_blue))
                 .title("B2")
                 .snippet("Boys Hostel"));
         Marker b5 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.771562, 76.983500))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_blue))
                 .title("B5")
                 .snippet("Boys Hostel"));
         Marker b6 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.771811, 76.983173))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_blue))
                 .title("B6")
                 .snippet("Boys Hostel"));
         Marker b7 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.771177, 76.982883))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_blue))
                 .title("B7")
                 .snippet("Boys Hostel"));
         Marker g3 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.771815, 76.983723))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_blue))
                 .title("G3")
                 .snippet("Boys Hostel"));
         Marker g4 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.771043, 76.983174))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_blue))
                 .title("G4")
                 .snippet("Boys Hostel"));
         Marker a1 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.775356, 76.985414))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_red))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_red))
                 .title("A1")
                 .snippet("Academic Building"));
         Marker grnd = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.773698, 76.984170))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_yellow))
                 .title("Football")
                 .snippet("Ground"));
         Marker baddy = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.770549, 76.982936))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_yellow))
                 .title("Badminton")
                 .snippet("court"));
         Marker tt = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.770628, 76.982970))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_yellow))
                 .title("TT")
                 .snippet("court"));
         Marker gym = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.770622, 76.982891))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_yellow))
                 .title("Gym"));
         Marker a9 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.774853, 76.983934))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_red))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_red))
                 .title("A9")
                 .snippet("Building"));
         Marker a5 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.774238, 76.985955))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_red))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_red))
                 .title("A5")
                 .snippet("Building"));
         Marker g2 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.773593, 76.985415))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_blue))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_blue))
                 .title("G2")
                 .snippet("Boys Hostel"));
         Marker mg = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.774227, 76.984969))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_yellow))
                 .title("Cricket")
                 .snippet("Ground"));
         Marker bc = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.773185, 76.984682))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_yellow))
                 .title("Basketball")
                 .snippet("court"));
         Marker lt = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.773114, 76.984481))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_yellow))
                 .title("Lawn Tennis")
                 .snippet("court"));
         Marker d1 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.773321, 76.984957))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_green))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_green))
                 .title("D1")
                 .snippet("mess"));
         Marker d2 = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.772115, 76.983557))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_green))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_green))
                 .title("D2")
                 .snippet("mess"));
         Marker oat = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.770382, 76.983339))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_yellow))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_yellow))
                 .title("OAT")
                 .snippet("Open Air Theatre"));
         Marker afc = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(31.772771, 76.984318))
-                .icon(bitmapDescriptorFromVector(this, R.drawable.ic_pin_green))
+                .icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_pin_green))
                 .title("AFC")
                 .snippet("Canteen"));
 
@@ -193,42 +267,5 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Canvas canvas = new Canvas(bitmap);
         vectorDrawable.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.map_type_menu, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.showCampus:
-                goToLocationZoom(31.773214, 76.984563, 16);
-                break;
-            case R.id.mapTpyeNormal:
-                mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                break;
-            case R.id.mapTpyeSatellite:
-                mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-                break;
-            case R.id.mapTpyeTerrain:
-                mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
-                break;
-            case R.id.mapTpyeHybrid:
-                mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-                break;
-            case android.R.id.home:
-
-                this.finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finish();
     }
 }

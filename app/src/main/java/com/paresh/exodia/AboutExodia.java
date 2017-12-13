@@ -2,28 +2,23 @@ package com.paresh.exodia;
 
 
 import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EventFragment extends Fragment {
+public class AboutExodia extends Fragment {
 
 
-    public EventFragment() {
+    public AboutExodia() {
         // Required empty public constructor
     }
 
@@ -43,9 +38,9 @@ public class EventFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View event_fragment = inflater.inflate(R.layout.fragment_events, container, false);
+        View event_fragment = inflater.inflate(R.layout.fragment_about, container, false);
         ((MainActivity) getActivity())
-                .setActionBarTitle("Events");
+                .setActionBarTitle("About Exodia");
 
         return event_fragment;
     }
@@ -58,6 +53,7 @@ public class EventFragment extends Fragment {
         if(getView() == null){
             return;
         }
+
         getView().setFocusableInTouchMode(true);
         getView().requestFocus();
         getView().setOnKeyListener(new View.OnKeyListener() {
