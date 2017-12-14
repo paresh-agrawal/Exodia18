@@ -9,7 +9,7 @@
         android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         app:tabTextColor="#95ffffff"
         app:tabSelectedTextColor="@color/colorAccent"
         app:tabMode="scrollable" />
