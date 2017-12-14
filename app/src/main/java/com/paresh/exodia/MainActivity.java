@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
+import com.paresh.exodia.Events.EventFragment;
 import com.paresh.exodia.ScheduleFragment.Schedule;
 
 import java.util.Timer;

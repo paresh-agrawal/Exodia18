@@ -1,29 +1,31 @@
-package com.paresh.exodia;
+package com.paresh.exodia.Events;
 
 
 import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+
+import com.paresh.exodia.MainActivity;
+import com.paresh.exodia.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EventFragment extends Fragment {
+public class EventList extends Fragment {
 
+    private boolean viewIsAtHome;
 
-    public EventFragment() {
+    public EventList() {
         // Required empty public constructor
     }
 
@@ -43,13 +45,25 @@ public class EventFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View event_fragment = inflater.inflate(R.layout.fragment_events, container, false);
+        View event_list_fragment = inflater.inflate(R.layout.events_fragment_list, container, false);
         ((MainActivity) getActivity())
                 .setActionBarTitle("Events");
+        int i =getArguments().getInt("key");
+        Log.d("int",String.valueOf(i));
 
-        return event_fragment;
+        ViewPager viewPager = (ViewPager) event_list_fragment.findViewById(R.id.viewpager);
+
+        // Create an adapter that knows which fragment should be shown on each page
+        SimpleFragmentPagerAdapterEvents adapter = new SimpleFragmentPagerAdapterEvents(getContext(), getActivity().getSupportFragmentManager());
+
+        // Set the adapter onto the view pager
+        viewPager.setAdapter(adapter);
+        // Give the TabLayout the ViewPager
+        TabLayout tabLayout = (TabLayout) event_list_fragment.findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(viewPager);
+        viewPager.setCurrentItem(i);
+        return event_list_fragment;
     }
-
 
     @Override
     public void onResume() {
@@ -65,7 +79,7 @@ public class EventFragment extends Fragment {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
                 if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
-                    Fragment fragment = new Home();
+                    Fragment fragment = new EventFragment();
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.replace(R.id.content_frame,fragment);
                     ft.commit();

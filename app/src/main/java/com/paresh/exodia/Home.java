@@ -2,7 +2,6 @@ package com.paresh.exodia;
 
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -14,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.paresh.exodia.Events.EventFragment;
 import com.paresh.exodia.ScheduleFragment.Schedule;
 
 import java.util.Timer;
