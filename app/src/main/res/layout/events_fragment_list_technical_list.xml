@@ -12,7 +12,7 @@
         android:background="@color/colorPrimaryDark"
         app:tabTextColor="#95ffffff"
         app:tabSelectedTextColor="@color/colorAccent"
-        app:tabMode="fixed" />
+        app:tabMode="scrollable" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"

@@ -27,6 +27,10 @@ public class SimpleFragmentPagerAdapterEventsTechnical extends FragmentStatePage
             return new EventListTechnicalListRobowar();
         } else if (position == 1){
             return new EventListTechnicalListLineFollower();
+        } else if (position == 2){
+            return new EventListTechnicalListJunkyardWars();
+        } else if (position == 3){
+            return new EventListTechnicalListLineFollower();
         } else {
             return new EventListTechnicalListJunkyardWars();
         }
@@ -35,7 +39,7 @@ public class SimpleFragmentPagerAdapterEventsTechnical extends FragmentStatePage
     // This determines the number of tabs
     @Override
     public int getCount() {
-        return 3;
+        return 5;
     }
 
     // This determines the title for each tab
@@ -48,6 +52,10 @@ public class SimpleFragmentPagerAdapterEventsTechnical extends FragmentStatePage
             case 1:
                 return mContext.getString(R.string.line_follower);
             case 2:
+                return mContext.getString(R.string.junkyard_wars);
+            case 3:
+                return mContext.getString(R.string.junkyard_wars);
+            case 4:
                 return mContext.getString(R.string.junkyard_wars);
             default:
                 return null;

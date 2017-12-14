@@ -2,6 +2,7 @@ package com.paresh.exodia.Events;
 
 
 import android.app.Activity;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -13,7 +14,9 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
+import com.paresh.exodia.Home;
 import com.paresh.exodia.MainActivity;
 import com.paresh.exodia.R;
 
@@ -61,6 +64,17 @@ public class EventList extends Fragment {
         // Give the TabLayout the ViewPager
         TabLayout tabLayout = (TabLayout) event_list_fragment.findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        View root = tabLayout.getChildAt(0);
+        if (root instanceof LinearLayout) {
+            ((LinearLayout) root).setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
+            GradientDrawable drawable = new GradientDrawable();
+            drawable.setColor(getResources().getColor(R.color.grey));
+            drawable.setSize(2, 1);
+            ((LinearLayout) root).setDividerPadding(30);
+            ((LinearLayout) root).setDividerDrawable(drawable);
+        }
+
         viewPager.setCurrentItem(i);
         return event_list_fragment;
     }
@@ -79,7 +93,7 @@ public class EventList extends Fragment {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
                 if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
-                    Fragment fragment = new EventFragment();
+                    Fragment fragment = new Home();
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.replace(R.id.content_frame,fragment);
                     ft.commit();

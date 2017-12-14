@@ -2,6 +2,7 @@ package com.paresh.exodia.Events;
 
 
 import android.app.Activity;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -13,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.paresh.exodia.MainActivity;
 import com.paresh.exodia.R;
@@ -65,6 +67,17 @@ public class EventListTechnicalList extends Fragment {
         // Give the TabLayout the ViewPager
         TabLayout tabLayout = (TabLayout) event_list_fragment_tech.findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        View root = tabLayout.getChildAt(0);
+        if (root instanceof LinearLayout) {
+            ((LinearLayout) root).setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
+            GradientDrawable drawable = new GradientDrawable();
+            drawable.setColor(getResources().getColor(R.color.grey));
+            drawable.setSize(2, 1);
+            ((LinearLayout) root).setDividerPadding(30);
+            ((LinearLayout) root).setDividerDrawable(drawable);
+        }
+
         viewPager.setCurrentItem(i);
         bundle.putInt("key",0);
         fragment.setArguments(bundle);
